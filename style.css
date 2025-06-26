@@ -44,7 +44,7 @@
   background-color: #005bb5;
   transform: translateY(-2px);
 }
-
+}
 
 /* Optional tweak for very small screens */
 @media (max-width: 480px) {
