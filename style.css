@@ -37,6 +37,7 @@ header .brand {
   text-decoration: none;
   color: #000;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 header .brand:hover {
@@ -81,6 +82,7 @@ main {
   max-width: 960px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
 .hero h2 {
@@ -89,6 +91,7 @@ main {
   margin-bottom: 1.25rem;
   color: #1d1d1f;
   line-height: 1.2;
+  max-width: 800px;
 }
 
 .hero p {
@@ -97,6 +100,7 @@ main {
   max-width: 640px;
   margin-bottom: 2rem;
   line-height: 1.6;
+  padding: 0 1rem;
 }
 
 .hero .btn {
@@ -108,6 +112,10 @@ main {
   text-decoration: none;
   box-shadow: 0 6px 14px rgba(0, 113, 227, 0.15);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 360px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
 }
 
 .hero .btn:hover {
@@ -188,6 +196,7 @@ main {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #1d1d1f;
 }
 
 .signup-section p {
@@ -217,6 +226,7 @@ main {
   border-color: #0071e3;
   outline: none;
 }
+
 .signup-section button.btn {
   background-color: #0071e3;
   color: #fff;
@@ -228,6 +238,8 @@ main {
   cursor: pointer;
   box-shadow: 0 6px 14px rgba(0, 113, 227, 0.15);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto;
+  max-width: 360px;
 }
 
 .signup-section button.btn:hover {
@@ -245,7 +257,7 @@ footer {
   margin-top: auto;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* MOBILE RESPONSIVENESS: KEEP HERO SAME LAYOUT AS DESKTOP */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -264,6 +276,7 @@ footer {
 
   .feature {
     width: 100%;
+    max-width: none;
   }
 
   .signup-section form {
@@ -271,16 +284,43 @@ footer {
   }
 
   .signup-section input[type="email"],
-  .signup-section button {
+  .signup-section button.btn {
     width: 100%;
   }
 
+  /* IMPORTANT: Hero stays same layout as desktop */
   .hero {
-    padding: 4rem 1rem;
+    padding: 6rem 1.5rem;
+    max-width: 960px;
+  }
+
+  .hero h2 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    max-width: 800px;
+  }
+
+  .hero p {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    max-width: 640px;
   }
 
   .hero .btn {
-    width: auto;
-    max-width: 100%;
+    max-width: 360px;
+    width: 100%;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .signup-section {
+    padding: 2rem 1rem;
   }
 }
